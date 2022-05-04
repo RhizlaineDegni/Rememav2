@@ -30,8 +30,8 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_49c0f38c74ca45d2865e607311baff66 }}/rhizlaine/remema:${{ github.sha }}
-        file: ./Dockerfile
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_49c0f38c74ca45d2865e607311baff66 }}/remema:${{ github.sha }}
+        file: ./docker-compose.yml
 
   deploy:
     runs-on: ubuntu-latest
@@ -48,4 +48,4 @@ jobs:
         app-name: 'pfeditor'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_cf196b8648bc4c45b8be07a25b275736 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_49c0f38c74ca45d2865e607311baff66 }}/rhizlaine/remema:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_49c0f38c74ca45d2865e607311baff66 }}/remema:${{ github.sha }}'
