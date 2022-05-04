@@ -12,11 +12,7 @@ services:
             - "127.0.0.1:80:80"
 
     web-php:
-<<<<<<< HEAD
-        image: ./docker-web/.build-php
-=======
-        image: rhizlaine/php
->>>>>>> b84706983423ebb7865e30c9294e85f798408e00
+        build: ./docker-web/.build-php
         container_name: web-php
         volumes:
             - "./docker-web/www:/script:ro"
