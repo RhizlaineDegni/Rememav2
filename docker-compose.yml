@@ -12,7 +12,7 @@ services:
             - "127.0.0.1:80:80"
 
     web-php:
-        build: ./docker-web/.build-php
+        image: ./docker-web/.build-php
         container_name: web-php
         volumes:
             - "./docker-web/www:/script:ro"
